@@ -14,7 +14,7 @@ class Games extends CI_Controller {
     }
 
     public function show($id){
-        $decodedId = $this->Encryption->decode($id);
+        $decodedId = $this->my_encryption->decode($id);
         $data['game'] = $this->game_model->get_by_id($decodedId);
         
         $this->load->view('games/show', $data);
